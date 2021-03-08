@@ -26,5 +26,20 @@ public class ReverseIterative {
 		} // tc o(n)
 
 	}
+	  public static void reverseRecursion(int[] arr, int start, int end) {
+		int temp = 0;
+		if (start >= end) {
+			return;
+		}
+		temp = arr[start]; // swap for 1 and asume that recursion will do for next froom index 1 to last
+		arr[start] = arr[end - 1];
+		arr[end - 1] = temp;
+		reverseRecursion(arr, start + 1, end - 1); // start +1 isliye qki humko 1st index se chalu karna hai or end-1 ki
+													// call denge jo ki aage jaake end-1-1 hoga to vo 2nd last
+		// index hi acess karega
+
+	} // o(n)
+
+}
 
 }
